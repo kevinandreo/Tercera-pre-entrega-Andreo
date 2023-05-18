@@ -1,0 +1,14 @@
+{% extends 'mi_app/base.html' %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+    <h1>Book List</h1>
+    <ul>
+    {% for book in books %}
+        <li>{{ book.title }} by {{ book.authors.all|join:", " }}</li>
+    {% empty %}
+        <li>No books yet.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
